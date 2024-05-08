@@ -1,0 +1,18 @@
+:root {
+  --green: #46b684;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: linear-gradient(
+    30deg,
+    rgba(67, 132, 192, 1) 0%,
+    rgba(74, 168, 150, 1) 100%
+  );
+  font-size: 16px;
+}
+
+#app {
+  height: 100%;
+}

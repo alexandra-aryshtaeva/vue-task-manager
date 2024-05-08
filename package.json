@@ -10,8 +10,8 @@
     "test:unit": "vitest"
   },
   "dependencies": {
-    "vue": "^3.4.21",
-    "vue-router": "^4.3.0"
+    "unplugin-fonts": "^1.1.1",
+    "vue": "^3.4.21"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
