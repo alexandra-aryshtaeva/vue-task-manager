@@ -1,9 +1,12 @@
 :root {
   --green: #46b684;
+  --blue: #17334e;
+  --blue-o: rgb(23, 51, 78, 0.4);
   height: 100%;
 }
 
 body {
+  font-family: "Inter";
   height: 100%;
   background: linear-gradient(
     30deg,
@@ -15,4 +18,8 @@ body {
 
 #app {
   height: 100%;
+}
+ul,
+li {
+  list-style: none;
 }

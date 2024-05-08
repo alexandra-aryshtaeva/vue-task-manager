@@ -1,29 +1,35 @@
-<script setup></script>
+<script setup>
+import CloseButton from "@/components/CloseButton.vue";
+
+const props = defineProps({
+  options: Array,
+});
+</script>
 
 <template>
-  <div class="wrapper">
-    <input type="text" />
-    <div class="task">Insert Task</div>
-  </div>
+  <ul>
+    <li>
+      <div class="task">Insert Task <CloseButton class="close-button" /></div>
+    </li>
+  </ul>
 </template>
 
 <style scoped>
-.wrapper {
-  background-color: aqua;
+.task {
   display: flex;
-  flex-direction: column;
-  margin: 1rem 1rem;
-}
-input {
+  justify-content: space-between;
+  align-items: center;
   margin-top: 1rem;
-  display: flex;
+  color: var(--blue);
+  font-weight: 600;
+  border: solid var(--blue-o) 1px;
+  border-radius: 6px;
+  padding: 1rem;
+  font-size: 1.2rem;
+  box-shadow: 0px 0px 4px rgb(161, 161, 161, 0.3);
 }
 
-.task {
-  margin-top: 1rem;
-  border: solid black 1px;
-  border-radius: 4px;
-  text-align: center;
-  padding: 1rem;
+.close-button {
+  height: 1rem;
 }
 </style>
