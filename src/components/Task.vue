@@ -1,17 +1,20 @@
 <script setup>
 import CloseButton from "@/components/CloseButton.vue";
 
-const props = defineProps({
-  options: Array,
+// information come from parent component (in this case it's the App.vue)
+defineProps({
+  task: Object,
 });
 </script>
 
 <template>
-  <ul>
-    <li>
-      <div class="task">Insert Task <CloseButton class="close-button" /></div>
-    </li>
-  </ul>
+  <li>
+    <div :class="{ colored: task.isColored }" class="task">
+      {{ task.name }}
+      <!-- 'removeTask' = close-task that is in the father -->
+      <CloseButton class="close-button" @click="$emit('removeTask')" />
+    </div>
+  </li>
 </template>
 
 <style scoped>
@@ -25,11 +28,23 @@ const props = defineProps({
   border: solid var(--blue-o) 1px;
   border-radius: 6px;
   padding: 1rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   box-shadow: 0px 0px 4px rgb(161, 161, 161, 0.3);
+  cursor: pointer;
 }
-
+.colored {
+  text-decoration: line-through;
+  color: var(--green);
+}
 .close-button {
   height: 1rem;
+  padding: 0px;
+  margin: 0px;
+  cursor: pointer;
+}
+.close-button:hover {
+  background-color: rgb(252, 211, 211);
+  border-radius: 100%;
+  width: 18px;
 }
 </style>
